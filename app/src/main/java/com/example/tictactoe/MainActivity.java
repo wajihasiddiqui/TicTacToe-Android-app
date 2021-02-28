@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button restart;
 
     boolean gameActive = true;
     //  Player Representation
@@ -26,12 +29,31 @@ public class MainActivity extends AppCompatActivity {
 
     int [] [] winningPosition = {{0, 1, 2},{3, 4, 5},{6, 7, 8},{0, 3, 6},{1, 4, 7},{2, 5, 8},{0, 4, 8},{2, 4, 6}};
 
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        restart = findViewById(R.id.restart);
+
+        restart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    gameReset();
+
+            }
+        });
+    }
+
     public void taptap(View view){
 
         ImageView img = (ImageView) view;
         int tappedimage = Integer.parseInt(img.getTag().toString());
         if(!gameActive){
-            gameReset(view);
+            gameReset();
         }
         if (gamestate[tappedimage] == 2){
             gamestate[tappedimage] = avtiveplayer;
@@ -80,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void gameReset(View view) {
+    public void gameReset() {
         gameActive = true;
         avtiveplayer = 0;
         for(int i=0; i<gamestate.length; i++){
@@ -98,11 +120,5 @@ public class MainActivity extends AppCompatActivity {
 
         TextView status = findViewById(R.id.status);
         status.setText("X's Turn - Tap to play");
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
     }
 }
