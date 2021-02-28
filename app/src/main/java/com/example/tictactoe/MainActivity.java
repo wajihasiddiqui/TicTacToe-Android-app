@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
             gamestate[tappedimage] = avtiveplayer;
             img.setTranslationY(-1000f);
             if (avtiveplayer == 0){
-                img.setImageResource(R.drawable.x);
+                img.setImageResource(R.drawable.wrong);
                 TextView status = findViewById(R.id.status);
                 status.setText("O,s Turn Tap To Play");
                 avtiveplayer = 1;
             }
             else {
-                img.setImageResource(R.drawable.ok);
+                img.setImageResource(R.drawable.zero);
                 TextView status = findViewById(R.id.status);
                 status.setText("X,s Turn Tap To Play");
                 avtiveplayer = 0;

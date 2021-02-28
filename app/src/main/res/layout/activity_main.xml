@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="199dp"
-        android:layout_height="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="44dp"
-        android:fontFamily="cursive"
+
         android:text="Tic Tac Toe"
-        android:textSize="40dp"
+        android:textSize="50dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,14 +150,15 @@
 
     <TextView
         android:id="@+id/status"
-        android:layout_width="140dp"
+        android:layout_width="wrap_content"
         android:layout_height="26dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
         android:text="X's Trur Tap To Play "
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
